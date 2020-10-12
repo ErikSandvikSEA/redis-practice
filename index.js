@@ -27,7 +27,7 @@ async function getRepos(req, res, next){
         const repos = data.public_repos
 
         //set to redis
-        client.SETEX(username, 3600, repos)
+        client.SETEX(username, 1800, repos)
 
         res.send(setResponse(username, repos))
 
